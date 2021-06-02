@@ -3,7 +3,7 @@ body {
     max-width: 1024px;
     margin: 0 auto;
     background: rgb(22, 138, 139);
-    background-image: linear-gradient(0deg, rgba(22, 138, 139, 1) 21%, rgba(125, 29, 212, 1) 91%);
+    background-image: url("../background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -22,7 +22,7 @@ body {
     display: inline-block;
     margin: 10px;
     padding: 20px;
-    font-size: 16px;
+    font-size: 25px;
     border-radius: 15px;
     font-family: Helvetica, sans-serif;
     outline: none;
@@ -101,10 +101,10 @@ body {
 
 @keyframes zoom {
     from {
-        transform: translate(0);
+        transform: scale(0);
     }
     to {
-        transform: translate(1);
+        transform: scale(1);
     }
 }
 
@@ -143,23 +143,31 @@ body {
 }
 
 
-/*
-*
-*   Modal Image
-*
-*/
+/* Container Images */
 
-
-/* Style the Image Used to Trigger the Modal */
-
-img {
+.js-container img {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-img:hover {
-    opacity: 0.7;
+.js-container img:hover {
+    box-shadow: 5px 10px 15px 20px rgba(255, 255, 255, 0.5);
+}
+
+
+/* Modal images */
+
+.modal img {
+    transition: transform 0.5s, filter 1s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(50%);
+    border-radius: 10px;
+}
+
+.modal img:hover {
+    filter: brightness(100%);
+    transform: scale(1.5);
 }
 
 
@@ -193,40 +201,118 @@ img:hover {
 
 .modal-content {
     margin: auto;
+    margin-top: 10%;
     display: block;
     width: auto;
     height: 200px;
-    border: 2px solid white;
-}
-
-
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
+    border: 3px solid white;
 }
 
 
 /* Add Animation - Zoom in the Modal */
 
 .modal-content {
-    animation-name: zoom;
+    animation-name: zoom-in-image;
     animation-duration: 0.6s;
 }
 
-@keyframes zoom {
+@keyframes zoom-in-image {
     from {
         transform: scale(0)
     }
     to {
         transform: scale(1)
+    }
+}
+
+.modal h1 {
+    margin: 10px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-family: "Bebas-Neue", cursive;
+    animation-name: flash;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.arrow {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    left: 48%;
+    height: 50px;
+    width: 50px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 1px 1px 0px;
+    transform: rotate(45deg);
+}
+
+.download {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    width: 30%;
+    top: 10%;
+    left: 35%;
+    background-color: rgba(59, 59, 59, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    -webkit-animation: flash linear 2s infinite;
+    animation: flash linear 2s infinite;
+    /* Green */
+}
+
+@-webkit-keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.download:hover {
+    animation: none;
+    cursor: pointer;
+}
+
+.download .text {
+    text-align: left;
+}
+
+.download .raquo {
+    position: relative;
+    font-size: 30px;
+    animation: move 2s infinite;
+}
+
+@keyframes move {
+    from {
+        left: 0;
+    }
+    to {
+        left: 20%;
     }
 }
 
@@ -248,13 +334,4 @@ img:hover {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-}
-
-
-/* 100% Image Width on Smaller Screens */
-
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-    }
 }
