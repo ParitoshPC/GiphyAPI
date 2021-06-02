@@ -1,0 +1,36 @@
+@media screen and (max-width:766px) {
+    body {
+        width: 100%;
+    }
+    .js-container {
+        margin: auto;
+        width: 100%;
+    }
+    .container-textinput {
+        width: 80%;
+    }
+    .container-button {
+        width: 30%;
+    }
+    .modal img {
+        /* position: relative; */
+        /* top: 20%; */
+        transition: transform 0.5s, filter 1s ease-in-out;
+        transform-origin: center center;
+        filter: brightness(50%);
+        border-radius: 10px;
+    }
+    .modal img:hover {
+        filter: brightness(100%);
+        transform: scale(1.1);
+    }
+    .errorModal h1 {
+        position: absolute;
+        padding-left: 0;
+        top: 15%;
+        left: 10%;
+        white-space: pre-wrap;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 30px;
+    }
+}
