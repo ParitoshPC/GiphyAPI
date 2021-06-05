@@ -1,4 +1,4 @@
-@media screen and (max-width:766px) {
+@media screen and (max-width:970px) {
     body {
         width: 100%;
     }
@@ -23,6 +23,11 @@
     .modal img:hover {
         filter: brightness(100%);
         transform: scale(1.1);
+    }
+    #download-btn {
+        width: auto;
+        margin: 10px;
+        margin-left: 0;
     }
     .errorModal h1 {
         position: absolute;

@@ -1,16 +1,28 @@
+html {
+    height: 100%;
+}
+
 body {
-    width: 80%;
+    height: 100%;
+    width: 100%;
     max-width: 1024px;
-    margin: 0 auto;
-    background: rgb(22, 138, 139);
+    margin: auto;
     background-image: url("../background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
 .container {
     text-align: center;
+    width: 100%;
 }
 
 .container-padding50 {
@@ -54,13 +66,9 @@ body {
     border-color: rgba(255, 255, 255, 1);
 }
 
-.js-container {
-    width: auto;
-}
-
 .container-image {
     display: inline-block;
-    width: 30%;
+    width: 20%;
     margin: 10px;
     height: fit-content;
 }
@@ -174,35 +182,28 @@ body {
 /* The Modal (background) */
 
 .modal {
-    display: none;
-    /* Hidden by default */
+    display: flex;
     position: fixed;
-    /* Stay in place */
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 1.0);
-    /* Black w/ opacity */
+    overflow-y: auto;
 }
 
 
 /* Modal Content (Image) */
 
 .modal-content {
-    margin: auto;
-    margin-top: 10%;
     display: block;
+    margin: auto;
+    margin-top: 5%;
     width: auto;
     height: 200px;
     border: 3px solid white;
@@ -237,25 +238,13 @@ body {
     animation-iteration-count: infinite;
 }
 
-.arrow {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    left: 48%;
-    height: 50px;
-    width: 50px;
-    border-style: solid;
-    border-color: white;
-    border-width: 0 1px 1px 0px;
-    transform: rotate(45deg);
+#download-btn {
+    margin: 5%;
 }
 
-.download {
-    display: inline-block;
-    position: relative;
-    margin: 10px;
-    width: 30%;
-    top: 10%;
+#download-btn {
+    position: absolute;
+    width: 20%;
     left: 35%;
     background-color: rgba(59, 59, 59, 0.5);
     color: white;
@@ -292,16 +281,16 @@ body {
     }
 }
 
-.download:hover {
+#download-btn:hover {
     animation: none;
     cursor: pointer;
 }
 
-.download .text {
+#download-btn .text {
     text-align: left;
 }
 
-.download .raquo {
+#download-btn .raquo {
     position: relative;
     font-size: 30px;
     animation: move 2s infinite;
@@ -334,4 +323,26 @@ body {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    height: 50px;
+    background-color: inherit
+}
+
+footer img {
+    width: 50px;
+}
+
+footer span {
+    font-family: "Bebas-Neue", cursive;
+    padding-left: 10px;
+    position: absolute;
+    top: 10px;
+    font-size: 25px;
+    color: white;
 }
