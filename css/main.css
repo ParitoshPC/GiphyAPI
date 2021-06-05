@@ -182,7 +182,7 @@ body {
 /* The Modal (background) */
 
 .modal {
-    display: flex;
+    display: none;
     position: fixed;
     justify-content: space-around;
     align-items: center;
