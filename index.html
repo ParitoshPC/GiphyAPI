@@ -11,34 +11,51 @@
 </head>
 
 <body>
+    <div class="flex-wrapper">
 
-
-    <div class="container container-padding50">
-        <input type="text" class="js-userinput container-textinput" placeholder="Please Enter Some text to get GIFS..!" />
-        <div style="text-align: center;">
-            <button class="js-go container-button bouncy">Let's Go</button>
+        <div class="container container-padding50">
+            <input type="text" class="js-userinput container-textinput" placeholder="Please Enter Some text to get GIFS..!" />
+            <div style="text-align: center;">
+                <button class="js-go container-button bouncy">Let's Go</button>
+            </div>
         </div>
+        <div class="container container-padding50 js-container"></div>
+
+
+        <div class="modal">
+            <span class="close">&otimes;</span>
+            <div class="modal-dialog">
+
+                <h1>Hover on Image</h1>
+
+                <img class="modal-content">
+                <div class="download">
+                    <a target="_blank">
+                        <button id="download-btn">
+                <span class="text"> Download</span>
+                <span class="raquo">&raquo;</span>
+                </button>
+                    </a>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+        <footer>
+            <img src="./logos/Giphy Icon Circle 180 px.png" alt="Giphy-Logo">
+            <span>Powered by Giphy</span>
+        </footer>
+
+
+
+
     </div>
-    <div class="container container-padding50 js-container">
 
 
-
-    </div>
-
-
-    <div class="modal">
-        <span class="close">&otimes;</span>
-        <h1>Hover on Image</h1>
-        <div class="arrow"></div>
-        <img class="modal-content">
-        <a target="_blank">
-            <button class="download">
-        <span class="text"> Download</span>
-        <span class="raquo">&raquo;</span>
-        </button>
-        </a>
-
-    </div>
 
 
     <script src="./javascript/index.js"></script>

@@ -6,6 +6,7 @@
  */
 
 
+const body = document.querySelector("body");
 
 var modal = document.querySelector(".modal");
 
@@ -16,13 +17,23 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
+    body.style.overflow = "auto";
     modal.style.display = "none";
 }
 
+
 modal.addEventListener('click', function() {
 
+    body.style.overflow = "auto";
     modal.style.display = "none";
 });
+
+
+function showModal(img) {
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    body.style.overflow = "hidden";
+}
 
 
 /****
@@ -33,7 +44,7 @@ modal.addEventListener('click', function() {
  * 
  * * */
 
-var button = modal.querySelector(".download");
+var button = modal.querySelector("#download-btn");
 var a = modal.querySelector("a");
 
 button.addEventListener('click', async function() {
@@ -44,9 +55,6 @@ button.addEventListener('click', async function() {
     console.log(imageBlob);
     const imageUrl = URL.createObjectURL(imageBlob);
 
-
-
-
     a.href = imageUrl;
     a.download = filename;
     a.click();
@@ -56,7 +64,12 @@ button.addEventListener('click', async function() {
 
 
 
-
+/***
+ * 
+ * 
+ * Searching and Appending Images in the Container
+ * 
+ */
 
 
 document.querySelector(".js-go").addEventListener('click', function() {
@@ -173,8 +186,8 @@ function pushToDOM(response) {
                 img.classList.add("container-image");
 
                 img.addEventListener('click', function() {
-                    modal.style.display = "block";
-                    modalImg.src = img.src;
+
+                    showModal(img);
 
                 })
 
